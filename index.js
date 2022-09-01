@@ -36,6 +36,7 @@ for(i=0; i<buttons.length;i++){
 }
 // adding event this function to all buttons
 
+
 for(let i=0; i < buttons.length; i++){
     buttons[i].addEventListener("click", function(){
        audios[i] = new Audio(sounds[i]);
@@ -47,5 +48,41 @@ for(let i=0; i < buttons.length; i++){
     });
 }
 
+document.addEventListener("keydown", (event)=>{
+    // console.log(event);
+    let key = event.key;
+    switch (key) {
+      case "w":
+        buttons[0].click();
+        break;
+      case "a":
+        buttons[1].click();
+        break;
+      case "s":
+        buttons[2].click();
+        break;
+      case "d":
+        buttons[3].click();
+        break;
+      case "j":
+        buttons[4].click();
+        break;
+      case "k":
+        buttons[5].click();
+        break;
+      case "l":
+        buttons[6].click();
+        break;
+
+        default:
+            console.log("Wrong Key");
+    }
+
+
+
+
+
+    
+});
 
 
