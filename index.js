@@ -30,62 +30,53 @@ let sounds = [
 
 // add event listner function
 let audios = [];
-for(i=0; i<buttons.length;i++){
-    let audio = new Audio(sounds[i]);
-    audios.push(audio);
+for (i = 0; i < buttons.length; i++) {
+  let audio = new Audio(sounds[i]);
+  audios.push(audio);
 }
 // adding event this function to all buttons
 
-
-for(let i=0; i < buttons.length; i++){
-    buttons[i].addEventListener("click", function(){
-       audios[i] = new Audio(sounds[i]);
-       audios[i].play(); 
-       buttons[i].style.color = "black";
-       buttons[i].classList.add("pressed");
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function () {
+    audios[i] = new Audio(sounds[i]);
+    audios[i].play();
+    buttons[i].style.color = "black";
+    buttons[i].classList.add("pressed");
     //    console.log(buttons[i].classList);
-       setTimeout(()=>{
-        buttons[i].style.color = "#da0463";
-        buttons[i].classList.remove("pressed");
-       },300);
-    });
+    setTimeout(() => {
+      buttons[i].style.color = "#da0463";
+      buttons[i].classList.remove("pressed");
+    }, 300);
+  });
 }
 
-document.addEventListener("keydown", (event)=>{
-    // console.log(event);
-    let key = event.key;
-    switch (key) {
-      case "w":
-        buttons[0].click();
-        break;
-      case "a":
-        buttons[1].click();
-        break;
-      case "s":
-        buttons[2].click();
-        break;
-      case "d":
-        buttons[3].click();
-        break;
-      case "j":
-        buttons[4].click();
-        break;
-      case "k":
-        buttons[5].click();
-        break;
-      case "l":
-        buttons[6].click();
-        break;
+document.addEventListener("keydown", (event) => {
+  // console.log(event);
+  let key = event.key;
+  switch (key) {
+    case "w":
+      buttons[0].click();
+      break;
+    case "a":
+      buttons[1].click();
+      break;
+    case "s":
+      buttons[2].click();
+      break;
+    case "d":
+      buttons[3].click();
+      break;
+    case "j":
+      buttons[4].click();
+      break;
+    case "k":
+      buttons[5].click();
+      break;
+    case "l":
+      buttons[6].click();
+      break;
 
-        default:
-            console.log("Wrong Key");
-    }
-
-
-
-
-
-    
+    default:
+      console.log("Wrong Key");
+  }
 });
-
-
