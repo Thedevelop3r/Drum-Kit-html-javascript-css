@@ -42,8 +42,10 @@ for(let i=0; i < buttons.length; i++){
        audios[i] = new Audio(sounds[i]);
        audios[i].play(); 
        buttons[i].style.color = "black";
+       buttons[i].classList.add(".pressed");
        setTimeout(()=>{
         buttons[i].style.color = "#da0463";
+        buttons[i].classList.remove(".pressed");
        },300);
     });
 }
